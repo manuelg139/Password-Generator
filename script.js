@@ -25,6 +25,17 @@ var confirmNumericCharacter;
 var confirmUpperCase;
 var confirmLowerCase; 
 
+//Prompts to confrim characters
+function generatePassword(){
+  var confirmLength = (prompt("How manny characters would you like your password to be?"));
+}
+ 
+// Loop answer to fit criteria
+ while(confirmLength <= 8 || confirmLength >= 128){
+    alert("Password must be between 8-128 characters. Try Again");
+    var confirmLength = (prompt("How manny characters would you like your password to be?"));
+ }
+
 
 // Write password to the #password input
 function writePassword() {
@@ -35,5 +46,8 @@ function writePassword() {
 
 }
 
+
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
