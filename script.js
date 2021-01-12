@@ -27,7 +27,6 @@ var confirmLowerCase;
 //Prompts to confrim characters
 function generatePassword() {
   var confirmLength = (prompt("How manny characters would you like your password to be?"));
-}
 
  
 // Loop answer to fit criteria
@@ -46,7 +45,7 @@ function generatePassword() {
 
 // Loop answer to fit criteria
 while(confirmSpecialCharacter === false && confirmNumericCharacter === false && confirmUpperCase === false && confirmLowerCase === false){
-  alert("You")
+
 
 }
 
@@ -71,12 +70,14 @@ console.log(passwordCharacters)
 
 //Loop selecting random items from convined arrays
 
-var randomPassword = "";
-for (var i = 0; i <confirmLength; i++) {
-    randomPassword = randomPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters,length)];
+var randomPassword = ""
+
+for (var i = 0; i < confirmLength; i++) {
+    randomPassword = randomPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
     console.log(randomPassword)
   }
   return randomPassword;
+}
 
 
 
