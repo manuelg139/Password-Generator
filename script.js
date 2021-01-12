@@ -35,6 +35,7 @@ function generatePassword() {
       var confirmLength = (prompt("How manny characters would you like your password to be?"));
   }
 
+  alert(`Your password will have ${confirmLength} characters`);
 
   //Confirm Password Parameters
   var confirmSpecialCharacter = confirm("Would you like to include special characters?");
