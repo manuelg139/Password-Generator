@@ -8,8 +8,7 @@
 
 
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
-
+document.querySelector("#generate").addEventListener("click", writePassword);
 
 //Character Arrays//
 var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
@@ -26,15 +25,60 @@ var confirmUpperCase;
 var confirmLowerCase; 
 
 //Prompts to confrim characters
-function generatePassword(){
+function generatePassword() {
   var confirmLength = (prompt("How manny characters would you like your password to be?"));
 }
+
  
 // Loop answer to fit criteria
- while(confirmLength <= 8 || confirmLength >= 128){
-    alert("Password must be between 8-128 characters. Try Again");
-    var confirmLength = (prompt("How manny characters would you like your password to be?"));
- }
+  while(confirmLength <= 8 || confirmLength >= 128){
+      alert("Password must be between 8-128 characters. Try Again");
+      var confirmLength = (prompt("How manny characters would you like your password to be?"));
+  }
+
+
+  //Confirm Password Parameters
+  var confirmSpecialCharacter = confirm("Would you like to include special characters?");
+  var confirmNumericCharacter = confirm("Would you like to include numeric characters?");
+  var confirmUpperCase = confirm("Would you like to include uppercase characters?");
+  var confirmLowerCase = confirm("Would you like to include lowercase characters?");
+
+
+// Loop answer to fit criteria
+while(confirmSpecialCharacter === false && confirmNumericCharacter === false && confirmUpperCase === false && confirmLowerCase === false){
+  alert("You")
+
+}
+
+
+//Assign action to the password parameters
+var passwordCharacters = []
+
+if (confirmSpecialCharacter) {
+  passwordCharacters = passwordCharacters.concat(specialChar)
+}
+if (confirmNumericCharacter) {
+  passwordCharacters = passwordCharacters.concat(number)
+}
+if (confirmUpperCase) {
+  passwordCharacters = passwordCharacters.concat(alphaUpper)
+}
+if (confirmLowerCase) {
+  passwordCharacters = passwordCharacters.concat(alphaLower)
+}
+
+console.log(passwordCharacters)
+
+//Loop selecting random items from convined arrays
+
+var randomPassword = "";
+for (var i = 0; i <confirmLength; i++) {
+    randomPassword = randomPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters,length)];
+    console.log(randomPassword)
+  }
+  return randomPassword;
+
+
 
 
 // Write password to the #password input
@@ -47,7 +91,4 @@ function writePassword() {
 }
 
 
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
